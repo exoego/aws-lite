@@ -15,7 +15,6 @@ export default {
   ListQueueTags:                { disabled, awsDoc: docRoot + 'API_ListQueueTags.html' },
   PurgeQueue:                   { disabled, awsDoc: docRoot + 'API_PurgeQueue.html' },
   RemovePermission:             { disabled, awsDoc: docRoot + 'API_RemovePermission.html' },
-  SendMessageBatch:             { disabled, awsDoc: docRoot + 'API_SendMessageBatch.html' },
   SetQueueAttributes:           { disabled, awsDoc: docRoot + 'API_SetQueueAttributes.html' },
   StartMessageMoveTask:         { disabled, awsDoc: docRoot + 'API_StartMessageMoveTask.html' },
   TagQueue:                     { disabled, awsDoc: docRoot + 'API_TagQueue.html' },

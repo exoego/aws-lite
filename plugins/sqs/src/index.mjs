@@ -86,6 +86,20 @@ const SendMessage = {
   response: ({ payload }) => payload.SendMessageResult,
   error: defaultError,
 }
+const SendMessageBatch = {
+  awsDoc: docRoot + 'API_SendMessageBatch.html',
+  validate: {
+    QueueUrl: { ...str, required, comment: 'SQS queue URL to send the message to' },
+    Entries: { ...arr, required, comment: 'List of `SendMessageBatchRequestEntry` items' },
+  },
+  request: async (params) => ({
+    awsjson: false,
+    headers: headers('SendMessageBatch', awsjsonContentType),
+    payload: params
+  }),
+  response: ({ payload }) => payload,
+  error: defaultError,
+}
 const DeleteMessage = {
   awsDoc: docRoot + 'API_DeleteMessage.html',
   validate: {
@@ -110,6 +124,7 @@ export default {
     GetQueueAttributes,
     ReceiveMessage,
     DeleteMessage,
+    SendMessageBatch,
     ...incomplete,
   }
 }

@@ -95,6 +95,17 @@ Properties:
   - The receipt handle associated with the message to delete
 
 
+### `SendMessageBatch`
+
+[Canonical AWS API doc](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html)
+
+Properties:
+- **`QueueUrl` (string) [required]**
+  - SQS queue URL to send the message to
+- **`Entries` (array) [required]**
+  - List of `SendMessageBatchRequestEntry` items
+
+
 ### Methods yet to be implemented
 
 > Please help out by [opening a PR](https://github.com/architect/aws-lite#authoring-aws-lite-plugins)!
@@ -113,7 +124,6 @@ Properties:
 - [`ListQueueTags`](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueueTags.html)
 - [`PurgeQueue`](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_PurgeQueue.html)
 - [`RemovePermission`](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_RemovePermission.html)
-- [`SendMessageBatch`](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html)
 - [`SetQueueAttributes`](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)
 - [`StartMessageMoveTask`](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_StartMessageMoveTask.html)
 - [`TagQueue`](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_TagQueue.html)

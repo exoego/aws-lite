@@ -5,6 +5,7 @@ import {
   GetQueueAttributesCommandOutput as GetQueueAttributesResponse,
   ReceiveMessageCommandOutput as ReceiveMessageResponse,
   DeleteMessageCommandOutput as DeleteMessageResponse,
+  SendMessageBatchCommandOutput as SendMessageBatchResponse,
   // $IMPORTS_END
 } from "@aws-sdk/client-sqs";
 
@@ -35,6 +36,12 @@ declare interface AwsLiteSQS {
    * - aws-lite docs: {@link https://github.com/architect/aws-lite/blob/main/plugins/sqs/readme.md#DeleteMessage SQS: DeleteMessage}
    */
   DeleteMessage: (input: { QueueUrl: string, ReceiptHandle: string }) => Promise<DeleteMessageResponse>
+  /**
+   * @description
+   * - AWS docs: {@link https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html SQS: SendMessageBatch}
+   * - aws-lite docs: {@link https://github.com/architect/aws-lite/blob/main/plugins/sqs/readme.md#SendMessageBatch SQS: SendMessageBatch}
+   */
+  SendMessageBatch: (input: { QueueUrl: string, Entries: any[] }) => Promise<SendMessageBatchResponse>
   // $METHODS_END
 }
 
@@ -52,5 +59,6 @@ export type {
   GetQueueAttributesResponse,
   ReceiveMessageResponse,
   DeleteMessageResponse,
+  SendMessageBatchResponse,
   // $EXPORT_END
 }
